@@ -230,9 +230,6 @@ if __name__ == "__main__":
         access_key: str = os.environ.get("ACCESS_KEY")
         private_key: str = os.environ.get("PRIVATE_KEY")
 
-        # if args.cached:
-
-        # https://formulaslug.onshape.com/documents/ec932fcb0efdb9716289a546/w/45ba9a6d4241901b0cc9d712/e/69389e018b58abaf464b3feb
         link_regex = (
             r"documents/(?P<document_id>.+)/w/(?P<workspace_id>.+)/e/(?P<element_id>.+)"
         )
