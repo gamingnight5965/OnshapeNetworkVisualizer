@@ -1,0 +1,6 @@
+pyvis
+networkx
+pandas
+python-dotenv
+requests
+requests-cache

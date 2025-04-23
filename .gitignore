@@ -1,0 +1,7 @@
+.venv
+.env
+__pycache__
+assemblies-cache.sqlite
+documents-cache.sqlite
+partstudios-cache.sqlite
+lib
