@@ -221,7 +221,7 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    if not args.l and not args.cached:
+    if not args.link and not args.cached:
         parser.error("Must either provide a link with '-l' or use the '--cached' flag")
 
     nthreads = int(args.n_threads)
@@ -321,7 +321,7 @@ if __name__ == "__main__":
         graph = networkx.read_gml("./network.gml")
 
     g = Network(
-        height=800,
+        height=1000,
         width="100%",
         bgcolor="#222222",
         font_color="white",
@@ -336,8 +336,10 @@ if __name__ == "__main__":
     for node_id in g.get_nodes():
         node_degree = graph.degree[node_id]
         g.get_node(node_id)["size"] = (math.log(node_degree, 2) + 1) * 25
-
-    g.set_options("""
+    if args.show_options:
+        g.show_buttons()
+    else:
+        g.set_options("""
         const options = {
       "nodes": {
 
@@ -348,6 +350,12 @@ if __name__ == "__main__":
 
       },
       "edges": {
+        "arrows" : {
+        "to": {
+        "enabled" : true,
+        "scaleFactor": 3.5
+        }
+        },
         "color": {
           "inherit": true
         },
